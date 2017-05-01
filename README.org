@@ -1,0 +1,13 @@
+* Installation
+
+In your REPL please eveluate the following:
+
+#+BEGIN_EXAMPLE
+CL-USER> (push #p "~/Programming/Lisp/cl-data-structures/" asdf:*central-registry*)
+
+CL-USER> (in-package :cl-data-structures)
+
+CL-DS> (ql:quickload :codex)
+
+CL-DS> (codex:document :cl-data-structures)
+#+END_EXAMPLE
