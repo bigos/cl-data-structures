@@ -4,7 +4,7 @@ In your REPL please eveluate the following:
 
 #+BEGIN_EXAMPLE
 CL-USER> (push #p "~/Programming/Lisp/cl-data-structures/" asdf:*central-registry*)
-
+CL-USER> (ql:quickload :cl-data-structures)
 CL-USER> (in-package :cl-data-structures)
 
 CL-DS> (ql:quickload :codex)
@@ -17,6 +17,8 @@ CL-DS> (codex:document :cl-data-structures)
 There was a problem with tests. Slight modification allows to run the following:
 
 #+BEGIN_EXAMPLE
+; load the :cl-data-structures system
+
 CL-DS> (ql:quickload :prove)
 
 CL-DS> (prove:run "~/Programming/Lisp/cl-data-structures/test/dicts/functional-dictionary-test-suite.lisp")
