@@ -13,8 +13,13 @@ CL-DS> (codex:document :cl-data-structures)
 #+END_EXAMPLE
 
 * Testing
+
+There was a problem with tests. Slight modification allows to run the following:
+
 #+BEGIN_EXAMPLE
 CL-DS> (ql:quickload :prove)
 
 CL-DS> (prove:run "~/Programming/Lisp/cl-data-structures/test/dicts/functional-dictionary-test-suite.lisp")
 #+END_EXAMPLE
+
+I need discussion with the author about possible fix.

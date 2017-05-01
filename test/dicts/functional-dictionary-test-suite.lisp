@@ -104,4 +104,4 @@
   (insert-every-word (cl-ds.dicts.hamt:make-functional-hamt-dictionary #'sxhash #'string=) 2)
   (finalize))
 
-
+(run-suite)
