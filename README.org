@@ -11,3 +11,10 @@ CL-DS> (ql:quickload :codex)
 
 CL-DS> (codex:document :cl-data-structures)
 #+END_EXAMPLE
+
+* Testing
+#+BEGIN_EXAMPLE
+CL-DS> (ql:quickload :prove)
+
+CL-DS> (prove:run "~/Programming/Lisp/cl-data-structures/test/dicts/functional-dictionary-test-suite.lisp")
+#+END_EXAMPLE
