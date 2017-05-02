@@ -25,3 +25,53 @@ CL-DS> (prove:run "~/Programming/Lisp/cl-data-structures/test/dicts/functional-d
 #+END_EXAMPLE
 
 I need discussion with the author about possible fix.
+
+* My notes
+
+** HAMT paper
+http://lampwww.epfl.ch/papers/idealhashtrees.pdf
+
+*** Introduction
+p 1
+
+The Hash Array Mapped Trie (HAMT) is based on the simple notion of hashing
+a key and storing the key in a trie based on this hash value. The AMT is used
+to implement the required structure efficiently.
+
+
+*** Essentials of the Array Mapped Trie
+p 2
+
+Optimised for 32 bit architecture but can be easily adapted to 64 bit.
+
+A trie is represented by a node and number of arcs leading to sub-tries and each
+arc represents a member of an alphabet of possible alternatives.
+
+The AMT data structure uses just two 32 bit words per node for a good compro-
+mise, achieving fast traversal at a cost of only one bit per empty arc. An integer bit
+map is used to represent the existence of each of the 32 possible arcs and an associ-
+ated table contains pointers to the appropriate sub-tries or terminal nodes. A one
+bit in the bit map represents a valid arc, while a zero an empty arc. The pointers
+in the table are kept in sorted order and correspond to the order of each one bit in
+the bit map.
+
+*** Ideal hashing
+p 3
+
+
+finished reading on p 4 3.1 Search for a key
+
+*** Partition hashing external storage
+p 10
+
+*** Sorted order AMT
+p 14
+
+*** IP routing
+p 15
+
+*** Class-selector dispatch
+p 16
+
+*** Performance comparisons
+p18
