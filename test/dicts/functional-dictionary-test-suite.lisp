@@ -53,14 +53,14 @@
            (is o word :test #'string=)
            (ok u)
            (setf dict v)))
-       (diag "Testing add")
+       (diag "Testing add (part 1)")
        (iterate
          (for s from 1 below ,limit)
          (for word in-vector *all-words*)
          (multiple-value-bind (v a) (add dict word s)
            (is a nil)
            (is (size dict) (size v))))
-       (diag "Testing add")
+       (diag "Testing add (part 2)")
        (iterate
          (for s from ,limit)
          (repeat ,limit)
