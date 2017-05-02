@@ -1,4 +1,6 @@
-* Installation
+* Using REPL
+
+** Installation
 
 In your REPL please eveluate the following:
 
@@ -12,7 +14,7 @@ CL-DS> (ql:quickload :codex)
 CL-DS> (codex:document :cl-data-structures)
 #+END_EXAMPLE
 
-* Testing
+** Testing
 
 There was a problem with tests. Slight modification allows to run the following:
 
@@ -26,12 +28,23 @@ CL-DS> (prove:run "~/Programming/Lisp/cl-data-structures/test/dicts/functional-d
 
 I need discussion with the author about possible fix.
 
+
 * My notes
 
-** HAMT paper
+** TODOs
+
+*** Quadtree
+
+**** add
+
+***** missing API methods
+
+***** copy-on-write
+
+* HAMT paper
 http://lampwww.epfl.ch/papers/idealhashtrees.pdf
 
-*** Introduction
+** Introduction
 p 1
 
 The Hash Array Mapped Trie (HAMT) is based on the simple notion of hashing
@@ -39,7 +52,7 @@ a key and storing the key in a trie based on this hash value. The AMT is used
 to implement the required structure efficiently.
 
 
-*** Essentials of the Array Mapped Trie
+** Essentials of the Array Mapped Trie
 p 2
 
 Optimised for 32 bit architecture but can be easily adapted to 64 bit.
@@ -55,23 +68,23 @@ bit in the bit map represents a valid arc, while a zero an empty arc. The pointe
 in the table are kept in sorted order and correspond to the order of each one bit in
 the bit map.
 
-*** Ideal hashing
+** Ideal hashing
 p 3
 
 
 finished reading on p 4 3.1 Search for a key
 
-*** Partition hashing external storage
+** Partition hashing external storage
 p 10
 
-*** Sorted order AMT
+** Sorted order AMT
 p 14
 
-*** IP routing
+** IP routing
 p 15
 
-*** Class-selector dispatch
+** Class-selector dispatch
 p 16
 
-*** Performance comparisons
+** Performance comparisons
 p18
