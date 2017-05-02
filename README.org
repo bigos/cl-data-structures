@@ -35,11 +35,21 @@ I need discussion with the author about possible fix.
 
 *** Quadtree
 
+**** references
+https://github.com/gwkkwg/cl-containers/blob/master/dev/quad-tree.lisp
+
 **** add
 
 ***** missing API methods
 
 ***** copy-on-write
+
+
+** IRC
+Leaving notes for a user to read later
+#+BEGIN_EXAMPLE
+,memo malice my memo text
+#+END_EXAMPLE
 
 * HAMT paper
 http://lampwww.epfl.ch/papers/idealhashtrees.pdf
