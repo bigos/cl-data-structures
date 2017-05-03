@@ -30,5 +30,7 @@
                         :serial T
                         :components ((:file "packages")
                                      (:file "trait-classes")
-                                     (:file "hamt/internal")
-                                     (:file "hamt/api")))))
+                                     (:module hamt
+                                              :serial T
+                                              :components ((:file "internal")
+                                                           (:file "api")))))))
