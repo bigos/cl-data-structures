@@ -10,7 +10,16 @@
   ())
 
 
-;;; implementation code
+;; direct methods from cl-containers
+;; METABANG.CL-CONTAINERS:FIND-ITEM
+;; METABANG.CL-CONTAINERS:EMPTY!
+;; METABANG.CL-CONTAINERS:EMPTY-P
+;; METABANG.CL-CONTAINERS:INSERT-ITEM
+;; METABANG.CL-CONTAINERS:MAKE-NODE-FOR-CONTAINER
+;; size
+;; (setf size) ??????
+
+;;; I have a list of operations on quadtree but I am not any wiser how I am supposed to add it to cl-data-structures
 
 
 ;; Some generics from src/api/generics.lisp were not implemented in
