@@ -180,7 +180,7 @@ Interface class.
    (%hash-fn :type (-> (x) fixnum)
              :reader read-hash-fn
              :initarg :hash-fn
-             :documentation "Closure used for key hashing. Setted by the user.")
+             :documentation "Closure used for key hashing. Set by the user.")
    (%equal-fn :type (-> (t t) boolean)
               :reader read-equal-fn
               :initarg :equal-fn
