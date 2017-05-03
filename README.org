@@ -82,9 +82,11 @@ file /cl-data-structures/src/dicts/hamt/api.lisp line 18
 
 
 
-***** adding file to the project
-Should I add a folder something like:
-cl-data-structures/src/dicts/quad tree ?
+**** problems
+
++ Quadtree is different than HAMT dictionary, what API should I expose?
+
++ What shout be different what should  be shared?
 
 ** IRC
 Leaving notes for a user to read later
