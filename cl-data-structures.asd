@@ -9,28 +9,22 @@
   :depends-on (:iterate :alexandria :serapeum :prove
                         :cl-containers)
   :serial T
+  :pathname "src"
   :components ((:file "package")
-               (:module api
-                        :pathname "src/api"
-                        :serial T
-                        :components ((:file "trait-classes")
-                                     (:file "generics")
-                                     (:file "conditions")))
-               (:module utils
-                        :pathname "src/utils"
-                        :serial T
-                        :components ((:file "package")
-                                     (:file "macros")
-                                     (:file "types")
-                                     (:file "ordered-algorithms")
-                                     (:file "lists")
-                                     (:file "modification-algorithms")))
-               (:module dicts
-                        :pathname "src/dicts"
-                        :serial T
-                        :components ((:file "packages")
-                                     (:file "trait-classes")
-                                     (:module hamt
-                                              :serial T
-                                              :components ((:file "internal")
-                                                           (:file "api")))))))
+               (:module "api"
+                :components ((:file "trait-classes")
+                             (:file "generics")
+                             (:file "conditions")))
+               (:module "utils"
+                :components ((:file "package")
+                             (:file "macros")
+                             (:file "types")
+                             (:file "ordered-algorithms")
+                             (:file "lists")
+                             (:file "modification-algorithms")))
+               (:module "dicts"
+                :components ((:file "packages")
+                             (:file "trait-classes")
+                             (:module "hamt"
+                              :components ((:file "internal")
+                                           (:file "api")))))))
