@@ -9,6 +9,15 @@ update -> replace item at coordinates, do nothing otherwise
 erase -> you know the drill
 
 
+
+
+| cl-containers | cl-data-structures |
+| find-item     | at                 |
+| insert-item   | insert             |
+|               | add                |
+|               | update             |
+| empty!        | erase              |
+
 ** cl containers direct methods
 
 find-item
