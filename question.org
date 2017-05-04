@@ -1,0 +1,39 @@
+* Plan
+** Question
+
+Nie rozumiem jak mam wpasowac quadtree methods do twojego api. Tylko insert i
+size jako tako pasuja. Potzebuje przykladu jak to bylo zrobione gdzies indziej.
+
+Ponizej jest lista metod w cl-containers i twoje api.
+
+** cl containers direct methods
+
+find-item
+empty!
+empty-p
+insert-item
+make-node-for-container
+size
+(setf size)
+
+** cl-data-structures api
+
+at
+(setf at)
+
+add
+add!
+
+insert
+
+erase
+erase!
+
+size
+
+update
+update!
+
+become-functional
+
+become-mutable
