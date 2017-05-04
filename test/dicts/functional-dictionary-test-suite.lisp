@@ -101,7 +101,10 @@
 
 (defun run-suite ()
   (plan 25)
+  ;; hamt
   (insert-every-word (cl-ds.dicts.hamt:make-functional-hamt-dictionary #'sxhash #'string=) 2)
+  ;; quadtree
+  (insert-every-word (cl-ds.dicts.quadtree:make-functional-quadtree ) 2)
   (finalize))
 
 (run-suite)
