@@ -39,18 +39,13 @@
 
    ;; :read-max-depth
 
-   ;; :make-functional-quadtree-dictionary
-   ;; :make-mutable-quadtree-dictionary
+   :make-functional-quadtree
+   :make-mutable-quadtree
 
-   ;; :quadtree-dictionary-at
-   ;; :quadtree-dictionary-size
-
-   ;; :mutable-quadtree-dictionary-insert!
-   ;; :mutable-quadtree-dictionary-update!
-   ;; :mutable-quadtree-dictionary-add!
-
-   ;; :functional-quadtree-dictionary-insert
-   ;; :functional-quadtree-dictionary-add
-   ;; :functional-quadtree-dictionary-erase
-   ;; :functional-quadtree-dictionary-update
+   :size
+   :at
+   :insert
+   :add
+   :update
+   :erase
    ))

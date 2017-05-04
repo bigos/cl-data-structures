@@ -1,3 +1,5 @@
+(declaim (optimize (debug 3)))
+
 (in-package :cl-ds.dicts.quadtree)
 
 (defclass functional-quadtree (cl-containers:quad-tree
@@ -11,11 +13,11 @@
 
 (defun unimplemented () (error "not implemented"))
 
-(defun make-functional-quad-tree ()
+(defun make-functional-quadtree ()
   (unimplemented))
 
-(defun make-mutable-quad-tree ()
-  (unimplemented))
+(defun make-mutable-quadtree ()
+  (make-instance 'mutable-quadtree))
 
 ;; at -> return item at coordinates (coordinates should be t, for tests array of size = 2 will be ok)
 ;; insert -> insert item at coordinates, replace if exists
@@ -30,6 +32,8 @@
 ;; |               | add                |
 ;; |               | update             |
 ;; | empty!        | erase              |
+
+(defmethod cl-ds:size ((container functional-quadtree)))
 
 (defmethod cl-ds:at ((container functional-quadtree) location)
   ;; I have no idea what I need to do.
