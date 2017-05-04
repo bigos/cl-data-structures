@@ -1,10 +1,13 @@
 * Plan
-** Question
 
-Nie rozumiem jak mam wpasowac quadtree methods do twojego api. Tylko insert i
-size jako tako pasuja. Potzebuje przykladu jak to bylo zrobione gdzies indziej.
+** Answer
 
-Ponizej jest lista metod w cl-containers i twoje api.
+at -> return item at coordinates (coordinates should be t, for tests array of size = 2 will be ok)
+insert -> insert item at coordinates, replace if exists
+add -> insert item at coordinates if place is not occupied
+update -> replace item at coordinates, do nothing otherwise
+erase -> you know the drill
+
 
 ** cl containers direct methods
 
