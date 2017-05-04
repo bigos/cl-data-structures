@@ -32,7 +32,9 @@
 ;; | empty!        | erase              |
 
 (defmethod cl-ds:at ((container functional-quadtree) location)
-  (unimplemented))
+  ;; I have no idea what I need to do.
+  ;; I need to test it somehow if this is correct
+  (cl-containers:quad-tree container location))
 
 (defmethod (setf cl-ds:at) (new-value (container mutable-quadtree) location)
   (unimplemented))
