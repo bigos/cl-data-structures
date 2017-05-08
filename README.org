@@ -94,6 +94,21 @@ Leaving notes for a user to read later
 ,memo username my memo text
 #+END_EXAMPLE
 
+** Debugging cl-containsers
+
+*** uninstall quicklisp version
+#+BEGIN_EXAMPLE
+ (ql:uninstall :cl-containers)
+#+END_EXAMPLE
+
+*** install and use modified version
+#+BEGIN_EXAMPLE
+(push "~/Programming/Lisp/cl-containers/" asdf:*central-registry*)
+(ql:quickload :cl-containers)
+(in-package :cl-containers)
+(defparameter qt (make-instance 'quad-tree))
+#+END_EXAMPLE
+
 * HAMT paper
 http://lampwww.epfl.ch/papers/idealhashtrees.pdf
 
