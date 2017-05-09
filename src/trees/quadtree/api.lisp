@@ -15,9 +15,6 @@
 ;; |               | update             |
 ;; | empty!        | erase              |
 
-
-
-
 ;; * Classes
 ;; ** quad-tree
 ;; [ ]  CLASSIFIER = CONS-CLASSIFIER
@@ -35,18 +32,30 @@
 ;; [ ]  TOP-RIGHT-CHILD    = #<QUAD-TREE-NODE (3.1 . 3.1)>
 ;; [ ]  TREE               = #<QUAD-TREE {1002E10523}>
 
-
-
-
-;;; finish the classes
+;;; finish the slots
 (defclass quadtree ()
-  ((size 0)))
+  ((classifier :initform #'<
+               :initarg :classifier
+               :accessor classifier)
+   (key nil)
+   (root nil)
+   (size :initarg 0)
+   (test nil)))
 
 (defclass quad-tree-node ()
-  ((tree :initform nil
+  ((parent )
+   (element)
+   (tree :initform nil
          :initarg :tree
-         :accessor tree))
-  (parent))
+         :accessor tree)
+   (top-left-child :initform nil
+                   :accessor top-left-child)
+   (top-right-child :initform nil
+                    :accessor top-right-child)
+   (bottom-left-child :initform nil
+                      :accessor bottom-left-child)
+   (bottom-right-child :initform nil
+                       :accessor bottom-right-child)))
 
 (defun cons-classifier (x y)
   (cond ((and (< (car x) (car y))
