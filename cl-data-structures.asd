@@ -11,19 +11,25 @@
   :pathname "src"
   :components ((:file "package")
                (:module "api"
-                :components ((:file "trait-classes")
-                             (:file "generics")
-                             (:file "conditions")))
+                        :components ((:file "trait-classes")
+                                     (:file "generics")
+                                     (:file "conditions")))
                (:module "utils"
-                :components ((:file "package")
-                             (:file "macros")
-                             (:file "types")
-                             (:file "ordered-algorithms")
-                             (:file "lists")
-                             (:file "modification-algorithms")))
+                        :components ((:file "package")
+                                     (:file "macros")
+                                     (:file "types")
+                                     (:file "ordered-algorithms")
+                                     (:file "lists")
+                                     (:file "modification-algorithms")))
+               (:module "trees"
+                        :components ((:file "packages")
+                                     (:file "trait-classes")
+                                     (:module "quadtree"
+                                              :components ((:file "internal")
+                                                           (:file "api")))))
                (:module "dicts"
-                :components ((:file "packages")
-                             (:file "trait-classes")
-                             (:module "hamt"
-                              :components ((:file "internal")
-                                           (:file "api")))))))
+                        :components ((:file "packages")
+                                     (:file "trait-classes")
+                                     (:module "hamt"
+                                              :components ((:file "internal")
+                                                           (:file "api")))))))
