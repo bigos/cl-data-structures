@@ -15,4 +15,54 @@
 ;; |               | update             |
 ;; | empty!        | erase              |
 
-(defclass quadtree () ())
+
+
+
+;; * Classes
+;; ** quad-tree
+;; [ ]  CLASSIFIER = CONS-CLASSIFIER
+;; [ ]  KEY        = IDENTITY
+;; [ ]  ROOT       = #<QUAD-TREE-NODE (0 . 0)>
+;; [ ]  SIZE       = 11
+;; [ ]  TEST       = EQUAL
+
+;; ** quad-tree-node
+;; [ ]  BOTTOM-LEFT-CHILD  = #<QUAD-TREE-NODE (-1 . -1)>
+;; [ ]  BOTTOM-RIGHT-CHILD = #<QUAD-TREE-NODE (1 . -1)>
+;; [ ]  ELEMENT            = (0 . 0)
+;; [ ]  PARENT             = NIL
+;; [ ]  TOP-LEFT-CHILD     = #<QUAD-TREE-NODE (-1 . 1)>
+;; [ ]  TOP-RIGHT-CHILD    = #<QUAD-TREE-NODE (3.1 . 3.1)>
+;; [ ]  TREE               = #<QUAD-TREE {1002E10523}>
+
+
+
+
+;;; finish the classes
+(defclass quadtree ()
+  ((size 0)))
+
+(defclass quad-tree-node ()
+  ((tree :initform nil
+         :initarg :tree
+         :accessor tree))
+  (parent))
+
+(defun cons-classifier (x y)
+  (cond ((and (< (car x) (car y))
+              (>= (cdr x) (cdr y)))
+         :TOP-LEFT)
+        ((and (>= (car x) (car y))
+              (>= (cdr x) (cdr y)))
+         :TOP-RIGHT)
+        ((and (>= (car x) (car y))
+              (< (cdr x) (cdr y)))
+         :BOTTOM-RIGHT)
+        ((and (< (car x) (car y))
+              (< (cdr x) (cdr y)))
+         :BOTTOM-LEFT)
+        (T (error "ran out of options"))))
+
+(defun make-quadtree ()
+  (make-instance 'quadtree
+                 :classifier 'cons-classifier))
