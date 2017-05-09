@@ -28,3 +28,14 @@
    :functional-hamt-dictionary-erase
    :functional-hamt-dictionary-update))
 
+(defpackage :cl-data-structures.quadtree
+  (:use :common-lisp :iterate :alexandria :serapeum :cl-ds.utils)
+  (:nicknames :cl-ds.quadtree)
+  (:shadowing-import-from :iterate :collecting :summing :in)
+  (:export
+
+   :at
+   :insert
+   :add
+   :update
+   :erase))
