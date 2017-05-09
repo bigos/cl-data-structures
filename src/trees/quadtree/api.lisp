@@ -37,14 +37,14 @@
   ((classifier :initform #'<
                :initarg :classifier
                :accessor classifier)
-   (key nil)
-   (root nil)
-   (size :initarg 0)
-   (test nil)))
+   (key :initform nil)
+   (root :initform nil)
+   (size :initform 0)
+   (test :initarg :test)))
 
 (defclass quad-tree-node ()
-  ((parent )
-   (element)
+  ((parent :initform nil)
+   (element :initform nil)
    (tree :initform nil
          :initarg :tree
          :accessor tree)
