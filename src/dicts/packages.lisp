@@ -4,7 +4,6 @@
   (:export
    :dictionary))
 
-
 (defpackage :cl-data-structures.dicts.hamt
   (:use :common-lisp :iterate :alexandria :serapeum :cl-ds.utils)
   (:nicknames :cl-ds.dicts.hamt)
@@ -27,15 +26,3 @@
    :functional-hamt-dictionary-add
    :functional-hamt-dictionary-erase
    :functional-hamt-dictionary-update))
-
-(defpackage :cl-data-structures.trees.quadtree
-  (:use :common-lisp :iterate :alexandria :serapeum :cl-ds.utils)
-  (:nicknames :cl-ds.trees.quadtree)
-  (:shadowing-import-from :iterate :collecting :summing :in)
-  (:export
-
-   :at
-   :insert
-   :add
-   :update
-   :erase))

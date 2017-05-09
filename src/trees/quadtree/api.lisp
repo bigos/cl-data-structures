@@ -15,4 +15,4 @@
 ;; |               | update             |
 ;; | empty!        | erase              |
 
-(defclass quadtree)
+(defclass quadtree () ())
