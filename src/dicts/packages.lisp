@@ -28,9 +28,9 @@
    :functional-hamt-dictionary-erase
    :functional-hamt-dictionary-update))
 
-(defpackage :cl-data-structures.quadtree
+(defpackage :cl-data-structures.trees.quadtree
   (:use :common-lisp :iterate :alexandria :serapeum :cl-ds.utils)
-  (:nicknames :cl-ds.quadtree)
+  (:nicknames :cl-ds.trees.quadtree)
   (:shadowing-import-from :iterate :collecting :summing :in)
   (:export
 
