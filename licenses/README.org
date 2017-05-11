@@ -1,0 +1,10 @@
+* Derived work
+
+This project is grateful to people who contributed to similar projects. Licenses
+of those projects are included in this folder.
+
+File [[file:COPYING][COPYING]] contains license from cl-containers written by
+Garry Warren King. We are inspired by much of his code.
+
+File [[file:LICENSE][LICENSE]] comes from LispMechanics who were working on
+cl-data-structures before us.
