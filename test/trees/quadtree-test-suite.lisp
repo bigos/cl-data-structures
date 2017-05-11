@@ -1,8 +1,5 @@
 (in-package :cl-user)
 
-;; (push "~/Programming/Lisp/cl-data-structures/" asdf:*central-registry*)
-(ql:quickload :cl-data-structures)
-
 (setf prove:*enable-colors* nil)
 
 (defpackage quadtree-test-suite

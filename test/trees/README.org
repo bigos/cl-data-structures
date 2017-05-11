@@ -1,0 +1,8 @@
+* Running Quadtree tests
+
+#+BEGIN_EXAMPLE
+(push "~/Programming/Lisp/cl-data-structures/" asdf:*central-registry*)
+(ql:quickload :cl-data-structures)
+(ql:quickload :prove)
+(prove:run "~/Programming/Lisp/cl-data-structures/test/trees/quadtree-test-suite.lisp")
+#+END_EXAMPLE
