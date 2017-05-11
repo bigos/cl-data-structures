@@ -1,4 +1,6 @@
-* Running Quadtree tests
+* Quadtree Tests
+
+** running
 
 #+BEGIN_EXAMPLE
 (push "~/Programming/Lisp/cl-data-structures/" asdf:*central-registry*)
@@ -6,3 +8,30 @@
 (ql:quickload :prove)
 (prove:run "~/Programming/Lisp/cl-data-structures/test/trees/quadtree-test-suite.lisp")
 #+END_EXAMPLE
+
+** REPL development
+
+#+BEGIN_EXAMPLE
+(in-package :cl-ds.trees.quadtree)
+(defparameter xyz (make-instance 'quadtree))
+#+END_EXAMPLE
+
+** trying local version of cl-containers
+
+You can start another instance of Emacs and start new REPL. There you can
+experiment with cl-containers code.
+
+#+BEGIN_SRC lisp
+  ;;; uninstall is available after running quickload
+  (ql:quickload :cl-containers)
+  (ql:uninstall :cl-containers)
+
+  ;;; tell asdf location of the local project
+  (push "~/Programming/Lisp/cl-containers/" asdf:*central-registry*)
+  (ql:quickload :cl-containers)
+  (in-package :cl-containers)
+
+  ;;; experiment
+  (test-exploration)
+
+#+END_SRC
