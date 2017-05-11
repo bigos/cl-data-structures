@@ -11,8 +11,4 @@
   (:shadowing-import-from :iterate :collecting :summing :in)
   (:export
 
-   :at
-   :insert
-   :add
-   :update
-   :erase))
+   ))

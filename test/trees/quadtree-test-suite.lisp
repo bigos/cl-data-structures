@@ -3,7 +3,7 @@
 (setf prove:*enable-colors* nil)
 
 (defpackage quadtree-test-suite
-  (:use :cl :prove :cl-ds )
+  (:use :cl :prove :cl-ds.trees.quadtree)
   (:shadowing-import-from :iterate :collecting :summing :in)
   (:export
            :run-suite))
