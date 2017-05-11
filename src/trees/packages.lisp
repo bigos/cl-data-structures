@@ -13,5 +13,8 @@
 
    :quadtree
 
+   :quadtree-node
+   :make-node-for-container
+   :element
 
    ))

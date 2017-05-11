@@ -42,9 +42,11 @@
    (size :initform 0 :reader size)
    (test :initarg :test)))
 
-(defclass quad-tree-node ()
+(defclass quadtree-node ()
   ((parent :initform nil)
-   (element :initform nil)
+   (element :initform nil
+            :initarg :element
+            :accessor element)
    (tree :initform nil
          :initarg :tree
          :accessor tree)
@@ -75,3 +77,13 @@
 (defun make-quadtree ()
   (make-instance 'quadtree
                  :classifier 'cons-classifier))
+
+(defgeneric make-node-for-container (container item &key)
+  (:documentation ""))
+
+(defmethod make-node-for-container ((tree quadtree) (item t) &key)
+  (if item
+      (make-instance 'quadtree-node
+                     :element item
+                     :tree tree)
+      nil))
