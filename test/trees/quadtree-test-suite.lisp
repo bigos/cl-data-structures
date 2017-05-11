@@ -12,8 +12,8 @@
 
 (plan 3)
 
-(ok (not (find 4 '(1 2 3))))
-(is 4 4)
+(is (+ 2 2) 4)
 (isnt 1 #\1)
+
 
 (finalize)
