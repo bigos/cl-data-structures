@@ -35,3 +35,7 @@ experiment with cl-containers code.
   (test-exploration)
 
 #+END_SRC
+
+** example Ruby implementation
+
+https://github.com/cantino/rquad/blob/master/lib/quadtree.rb

@@ -39,7 +39,7 @@
                :accessor classifier)
    (key :initform nil)
    (root :initform nil)
-   (size :initform 0)
+   (size :initform 0 :reader size)
    (test :initarg :test)))
 
 (defclass quad-tree-node ()

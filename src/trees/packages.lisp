@@ -11,4 +11,7 @@
   (:shadowing-import-from :iterate :collecting :summing :in)
   (:export
 
+   :quadtree
+
+
    ))

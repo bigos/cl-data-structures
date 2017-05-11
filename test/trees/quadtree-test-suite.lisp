@@ -10,10 +10,13 @@
 
 (in-package :quadtree-test-suite)
 
-(plan 3)
+(plan 4)
 
 (is (+ 2 2) 4)
 (isnt 1 #\1)
 
+(defparameter qt (make-instance 'quadtree))
+(is (type-of qt) 'quadtree)
+(is (size qt) 0)
 
 (finalize)
