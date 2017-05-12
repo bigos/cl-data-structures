@@ -37,13 +37,13 @@
   ((classifier :initform #'<
                :initarg :classifier
                :accessor classifier)
-   (key :initform nil)
-   (root :initform nil)
-   (size :initform 0 :reader size)
+   (key :initform #'identity :reader key)
+   (root :initform nil :accessor root)
+   (size :initform 0 :accessor size)
    (test :initarg :test)))
 
 (defclass quadtree-node ()
-  ((parent :initform nil)
+  ((parent :initform nil :accessor parent)
    (element :initform nil
             :initarg :element
             :accessor element)
@@ -87,3 +87,56 @@
                      :element item
                      :tree tree)
       nil))
+
+(defgeneric node-empty-p (node))
+
+(defmethod node-empty-p ((node quadtree-node))
+  (null (element node)))
+
+(defgeneric notify-element-of-child-status (element status)
+  (:documentation "This is called to allow the element to know its
+status as a child. Useful for quad tree elements, where an element's position
+relative to its parent could be relevant to the element. Status is one of:
+:TOP-LEFT, :TOP-RIGHT, :BOTTOM-LEFT, :BOTTOM-RIGHT or :ROOT")
+  (:method ((element t) (status t))
+    (values nil)))
+
+(defgeneric insert-item (container item))
+(defmethod insert-item ((tree quadtree) (item quadtree-node))
+  (loop with key = (key tree)
+     with y = (make-node-for-container tree nil)
+     with classifier = (classifier tree)
+     and x = (root tree)
+     and key-item = (funcall key (element item))
+     while (not (node-empty-p x))
+     do
+       (progn (setf x y)
+              (case (funcall classifier key-item (funcall key (element x)))
+                (:TOP-LEFT (setf x (top-left-child x)))
+                (:TOP-RIGHT (setf x (top-right-child x)))
+                (:BOTTOM-LEFT (setf x (bottom-left-child x)))
+                (:BOTTOM-RIGHT (setf x (bottom-right-child x)))))
+     finally
+       (progn
+         (setf (parent item) y
+               (tree item) tree)
+         (if (node-empty-p y)
+             (progn
+               (cerror "debug" "debug")
+               (notify-element-of-child-status (element item) :ROOT)
+               (setf (root tree) item))
+             (case (funcall classifier key-item (funcall key (element y)))
+               (:TOP-LEFT
+                (notify-element-of-child-status (element item) :TOP-LEFT)
+                (setf (top-left-child y) item))
+               (:TOP-RIGHT
+                (notify-element-of-child-status (element item) :TOP-RIGHT)
+                (setf (top-right-child y) item))
+               (:BOTTOM-LEFT
+                (notify-element-of-child-status (element item) :BOTTOM-LEFT)
+                (setf (bottom-left-child y) item))
+               (:BOTTOM-RIGHT
+                (notify-element-of-child-status
+                 (element item) :BOTTOM-RIGHT)
+                (setf (bottom-right-child y) item))))))
+  (incf (size tree)))

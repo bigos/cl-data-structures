@@ -10,7 +10,7 @@
 
 (in-package :quadtree-test-suite)
 
-(plan 6)
+(plan 7)
 
 (is (+ 2 2) 4)
 (isnt 1 #\1)
@@ -24,7 +24,6 @@
 (is (type-of n1) 'quadtree-node)
 (is (element n1) (cons 0 0))
 
-;; (cerror "cont" "debugging  ~a" n1)
-;; (insert-item qt n1)
+(insert-item qt n1)
 
 (finalize)

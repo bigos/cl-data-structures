@@ -15,6 +15,8 @@
    :make-quadtree
    :size
 
+   :insert-item
+
    :quadtree-node
    :make-node-for-container
    :element
