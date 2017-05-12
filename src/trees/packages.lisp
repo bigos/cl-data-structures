@@ -12,6 +12,8 @@
   (:export
 
    :quadtree
+   :make-quadtree
+   :size
 
    :quadtree-node
    :make-node-for-container
